@@ -19,6 +19,21 @@ namespace FluentValidationApp.Web.Controllers
         private readonly AppDbContext _context;
         private readonly IValidator<Customer> _customerValidator;
         private readonly IMapper _mapper;
+
+
+        [Route("MappingExample")]
+        [HttpGet]
+        public IActionResult MappingExample()
+        {
+            Customer customer = new Customer
+            {
+                Name = "John",
+                Age = 25,
+                Email = "adfds@gmail.com"
+            };
+            return Ok(_mapper.Map<CustomerDto>(customer));
+        }
+
         public CustomersApiController(AppDbContext context, IValidator<Customer> customerValidator, IMapper mapper)
         {
             _context = context;
