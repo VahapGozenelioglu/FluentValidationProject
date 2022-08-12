@@ -14,6 +14,8 @@ namespace FluentValidationApp.Web.Models
         public DateTime? BirthDay { get; set; }
         public IList<Address> Addresses { get; set; }
 
+        public CreditCard CreditCard { get; set; }
+        
         public string GetInformation()
         {
             return $"{Name}-{Email}-{Age}-{BirthDay}";

@@ -29,7 +29,8 @@ namespace FluentValidationApp.Web.Controllers
             {
                 Name = "John",
                 Age = 25,
-                Email = "adfds@gmail.com"
+                Email = "adfds@gmail.com",
+                CreditCard = new CreditCard{Id = 1,Number = "1234",ValidDate = DateTime.Now}
             };
             return Ok(_mapper.Map<CustomerDto>(customer));
         }
